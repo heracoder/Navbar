@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* allows us to include the padding and border in an element's total width and height.*/
+}
+
+/* defining personal fonts  */
+@font-face{
+    font-family: Poppins;
+    src : url(../../Documents/fonts/Poppins/Poppins-Light.ttf);
+}
+
+
+nav { 
+    display: flex; /*so it comes next to each other */
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color:rgb(16, 19, 30);
+    font-family: Poppins ;
+}
+
+.logo{
+    color: #ecedf6;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 16px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style-type: none;
+}
+
+.nav-links a{
+    text-decoration: none ;
+    color: #ecedf6;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.burger div{
+    width: 30px;
+    height: 3px;
+    background-color: #ecedf6;
+    margin: 5px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 1024px){
+    .nav-links{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        height: 92vh;
+        background-color:rgb(16, 19, 30);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 50%;
+        padding : 50px 0;
+        transform: translateX(100%);
+        z-index: 10;
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        margin: 10px 0;
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity : 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.body{
+    /* background-color: rebeccapurple; */
+    height: 92vh;
+    background-image: url('comdesk.jpg');
+    background-position: center;
+    background-size: cover;
+}
